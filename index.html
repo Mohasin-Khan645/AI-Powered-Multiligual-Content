@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCVET Multilingual Content Localization Engine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-language"></i>
+                    <span>NCVET Localization</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#languages">Languages</a></li>
+                    <li class="dropdown">
+                        <a href="#demo">Demo <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#translation-demo">Translation Demo</a></li>
+                            <li><a href="#voice-demo">Voice Recognition</a></li>
+                            <li><a href="#cultural-preview">Cultural Preview</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#tools">Tools <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#content-upload">Upload Content</a></li>
+                            <li><a href="#progress-dashboard">Dashboard</a></li>
+                            <li><a href="#api-playground">API Playground</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#accessibility">Accessibility</a></li>
+                    <li><a href="#integration">Integration</a></li>
+                    <li><a href="#chatbot-assistant" class="btn-secondary">
+                        <i class="fas fa-robot"></i>
+                        Assistant
+                    </a></li>
+                    <li><a href="#contact" class="btn-primary">Get Started</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero page active">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Democratizing Skill Education Through
+                    <span class="gradient-text">AI-Powered Multilingual Localization</span>
+                </h1>
+                <p class="hero-description">
+                    Break down language barriers in vocational training with our advanced AI engine that translates, 
+                    adapts, and culturally contextualizes training content across all 22 Indian languages.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">22+</span>
+                        <span class="stat-label">Indian Languages</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label">Training Materials</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">Accuracy Rate</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn-primary btn-large">
+                        <i class="fas fa-rocket"></i>
+                        Start Localizing
+                    </button>
+                    <button class="btn-secondary btn-large">
+                        <i class="fas fa-play"></i>
+                        Watch Demo
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="translation-demo">
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <span class="demo-title">Original Content</span>
+                            <span class="demo-lang">English</span>
+                        </div>
+                        <div class="demo-content">
+                            "Advanced welding techniques for automotive repair..."
+                        </div>
+                    </div>
+                    <div class="demo-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="demo-card">
+                        <div class="demo-header">
+                            <span class="demo-title">Localized Content</span>
+                            <span class="demo-lang">हिंदी</span>
+                        </div>
+                        <div class="demo-content">
+                            "ऑटोमोटिव मरम्मत के लिए उन्नत वेल्डिंग तकनीक..."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features page">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Features for Comprehensive Localization</h2>
+                <p>Our AI engine goes beyond simple translation to deliver culturally adapted, contextually accurate training content</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Translation</h3>
+                    <p>Advanced neural networks ensure accurate translation with industry-specific terminology and contextual understanding.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <h3>Cultural Adaptation</h3>
+                    <p>Content is culturally adapted to resonate with learners across different regions and communities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Speech Integration</h3>
+                    <p>Speech-to-text and text-to-speech features for enhanced accessibility and learning experience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Multi-Format Support</h3>
+                    <p>Handle documents, e-learning modules, multimedia content, and assessments seamlessly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Continuous Learning</h3>
+                    <p>AI/ML feedback loops continuously improve translation quality and accuracy over time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Scalable Architecture</h3>
+                    <p>Built to handle large volumes of training content with enterprise-grade performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages" class="languages page">
+        <div class="container">
+            <div class="section-header">
+                <h2>Supporting All 22 Indian Languages</h2>
+                <p>Comprehensive language coverage ensuring no learner is left behind</p>
+            </div>
+            <div class="languages-grid">
+                <div class="language-card">
+                    <span class="language-name">हिंदी</span>
+                    <span class="language-english">Hindi</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">বাংলা</span>
+                    <span class="language-english">Bengali</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">తెలుగు</span>
+                    <span class="language-english">Telugu</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">మరాఠీ</span>
+                    <span class="language-english">Marathi</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">தமிழ்</span>
+                    <span class="language-english">Tamil</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">ગુજરાતી</span>
+                    <span class="language-english">Gujarati</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">ಕನ್ನಡ</span>
+                    <span class="language-english">Kannada</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">മലയാളം</span>
+                    <span class="language-english">Malayalam</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">ਪੰਜਾਬੀ</span>
+                    <span class="language-english">Punjabi</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">ଓଡ଼ିଆ</span>
+                    <span class="language-english">Odia</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">অসমীয়া</span>
+                    <span class="language-english">Assamese</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">नेपाली</span>
+                    <span class="language-english">Nepali</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">اردو</span>
+                    <span class="language-english">Urdu</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">कोंकणी</span>
+                    <span class="language-english">Konkani</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">मैथिली</span>
+                    <span class="language-english">Maithili</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">संस्कृत</span>
+                    <span class="language-english">Sanskrit</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">डोगरी</span>
+                    <span class="language-english">Dogri</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">बोडो</span>
+                    <span class="language-english">Bodo</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">सिंधी</span>
+                    <span class="language-english">Sindhi</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">मणिपुरी</span>
+                    <span class="language-english">Manipuri</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">सांथाली</span>
+                    <span class="language-english">Santali</span>
+                </div>
+                <div class="language-card">
+                    <span class="language-name">कश्मीरी</span>
+                    <span class="language-english">Kashmiri</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-Time Translation Demo -->
+    <section id="translation-demo" class="translation-demo-section page">
+        <div class="container">
+            <div class="section-header">
+                <h2>Try Our Real-Time Translation Engine</h2>
+                <p>Experience the power of AI-driven multilingual content localization</p>
+            </div>
+            <div class="translation-interface">
+                <div class="translation-input">
+                    <div class="input-header">
+                        <label for="source-text">Enter your content:</label>
+                        <div class="language-selector">
+                            <select id="source-language">
+                                <option value="en">English</option>
+                                <option value="hi">हिंदी</option>
+                                <option value="bn">বাংলা</option>
+                                <option value="te">తెలుగు</option>
+                            </select>
+                        </div>
+                    </div>
+                    <textarea id="source-text" placeholder="Type your training content here..."></textarea>
+                    <div class="input-actions">
+                        <button class="btn-primary" id="translate-btn">
+                            <i class="fas fa-language"></i>
+                            Translate Now
+                        </button>
+                        <button class="btn-secondary" id="voice-input-btn">
+                            <i class="fas fa-microphone"></i>
+                            Voice Input
+                        </button>
+                    </div>
+                </div>
+                <div class="translation-output">
+                    <div class="output-header">
+                        <span>Translated Content:</span>
+                        <div class="confidence-score">
+                            <span>Confidence: </span>
+                            <span id="confidence-value">95%</span>
+                        </div>
+                    </div>
+                    <div class="output-languages">
+                        <div class="language-output">
+                            <div class="lang-header">
+                                <span class="lang-name">हिंदी</span>
+                                <span class="lang-code">Hindi</span>
+                            </div>
+                            <div class="translated-text" id="hindi-output">Translation will appear here...</div>
+                        </div>
+                        <div class="language-output">
+                            <div class="lang-header">
+                                <span class="lang-name">বাংলা</span>
+                                <span class="lang-code">Bengali</span>
+                            </div>
+                            <div class="translated-text" id="bengali-output">Translation will appear here...</div>
+                        </div>
+                        <div class="language-output">
+                            <div class="lang-header">
+                                <span class="lang-name">తెలుగు</span>
+                                <span class="lang-code">Telugu</span>
+                            </div>
+                            <div class="translated-text" id="telugu-output">Translation will appear here...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Content Upload -->
+    <section id="content-upload" class="content-upload-section page">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upload Your Training Content</h2>
+                <p>Drag and drop your files or browse to get started with localization</p>
+            </div>
+            <div class="upload-interface">
+                <div class="upload-area" id="upload-area">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Drag & Drop Files Here</h3>
+                        <p>or <button class="browse-btn">Browse Files</button></p>
+                        <div class="supported-formats">
+                            <span>Supported: PDF, DOCX, MP4, MP3, PPTX, TXT</span>
+                        </div>
+                    </div>
+                    <input type="file" id="file-input" multiple accept=".pdf,.docx,.mp4,.mp3,.pptx,.txt">
+                </div>
+                <div class="upload-progress" id="upload-progress" style="display: none;">
+                    <div class="progress-header">
+                        <span>Uploading Files...</span>
+                        <span id="progress-percentage">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="file-list" id="file-list"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Tracking Dashboard -->
+    <section id="progress-dashboard" class="progress-dashboard-section page">
+        <div class="container">
+            <div class="section-header">
+                <h2>Translation Progress Dashboard</h2>
+                <p>Track your localization jobs in real-time</p>
+            </div>
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Active Jobs</h3>
+                        <span class="job-count">3</span>
+                    </div>
+                    <div class="job-list">
+                        <div class="job-item">
+                            <div class="job-info">
+                                <span class="job-name">Automotive Training Manual</span>
+                                <span class="job-languages">5 languages</span>
+                            </div>
+                            <div class="job-progress">
+                                <div class="progress-bar-small">
+                                    <div class="progress-fill-small" style="width: 75%"></div>
+                                </div>
+                                <span class="progress-text">75% Complete</span>
+                            </div>
+                        </div>
+                        <div class="job-item">
+                            <div class="job-info">
+                                <span class="job-name">Safety Procedures Video</span>
+                                <span class="job-languages">3 languages</span>
+                            </div>
+                            <div class="job-progress">
+                                <div class="progress-bar-small">
+                                    <div class="progress-fill-small" style="width: 45%"></div>
+                                </div>
+                                <span class="progress-text">45% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Quality Metrics</h3>
+                        <span class="quality-score">98.5%</span>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <span class="metric-label">Accuracy</span>
+                            <span class="metric-value">98.5%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Cultural Fit</span>
+                            <span class="metric-value">96.2%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Terminology</span>
+                            <span class="metric-value">97.8%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3>Recent Activity</h3>
+                        <span class="activity-count">12</span>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Hindi translation completed</span>
+                            <span class="activity-time">2 min ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-upload"></i>
+                            <span>New content uploaded</span>
+                            <span class="activity-time">15 min ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-language"></i>
+                            <span>Bengali translation started</span>
+                            <span class="activity-time">1 hour ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voice Recognition Demo -->
+    <section id="voice-demo" class="voice-demo-section page">
+        <div class="container">
+            <div class="section-header">
+                <h2>Voice Recognition & Speech-to-Text</h2>
+                <p>Experience multilingual voice input and real-time transcription</p>
+            </div>
+            <div class="voice-interface">
+                <div class="voice-controls">
+                    <button class="voice-btn" id="start-recording">
+                        <i class="fas fa-microphone"></i>
+                        Start Recording
+                    </button>
+                    <div class="voice-status" id="voice-status">
+                        <span>Click to start voice input</span>
+                    </div>
+                    <div class="language-selector-voice">
+                        <label>Select Language:</label>
+                        <select id="voice-language">
+                            <option value="en-IN">English (India)</option>
+                            <option value="hi-IN">हिंदी</option>
+                            <option value="bn-IN">বাংলা</option>
+                            <option value="te-IN">తెలుగు</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="transcription-output">
+                    <div class="transcription-header">
+                        <span>Live Transcription:</span>
+                        <div class="audio-quality">
+                            <span>Audio Quality: </span>
+                            <span id="audio-quality">Good</span>
+                        </div>
+                    </div>
+                    <div class="transcription-text" id="transcription-text">
+                        Your speech will be transcribed here in real-time...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Adaptation Preview -->
+    <section id="cultural-preview" class="cultural-preview-section page">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cultural Adaptation Preview</h2>
+                <p>See how content is culturally adapted for different regions</p>
+            </div>
+            <div class="cultural-interface">
+                <div class="adaptation-selector">
+                    <label>Select Region:</label>
+                    <select id="region-selector">
+                        <option value="north">North India</option>
+                        <option value="south">South India</option>
+                        <option value="east">East India</option>
+                        <option value="west">West India</option>
+                        <option value="northeast">Northeast India</option>
+                    </select>
+                </div>
+                <div class="adaptation-comparison">
+                    <div class="original-content">
+                        <h4>Original Content</h4>
+                        <div class="content-text">
+                            "The automotive technician should follow safety protocols when working with electrical systems. Always wear protective equipment and ensure proper grounding."
+                        </div>
+                    </div>
+                    <div class="adapted-content">
+                        <h4>Cultural Adaptation</h4>
+                        <div class="content-text">
+                            <div class="adaptation-item">
+                                <span class="adaptation-label">Terminology:</span>
+                                <span class="adaptation-change">"automotive technician" → "गाड़ी का मैकेनिक" (North) / "కారు మెకానిక్" (South)</span>
+                            </div>
+                            <div class="adaptation-item">
+                                <span class="adaptation-label">Cultural Context:</span>
+                                <span class="adaptation-change">Added local safety examples and regional electrical standards</span>
+                            </div>
+                            <div class="adaptation-item">
+                                <span class="adaptation-label">Local References:</span>
+                                <span class="adaptation-change">Included region-specific safety regulations and equipment standards</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Testing Playground -->
+    <section id="api-playground" class="api-playground-section page">
+        <div class="container">
+            <div class="section-header">
+                <h2>API Testing Playground</h2>
+                <p>Test our localization APIs with live examples and interactive documentation</p>
+            </div>
+            <div class="playground-interface">
+                <div class="api-tabs">
+                    <button class="api-tab active" data-tab="translate">Translation API</button>
+                    <button class="api-tab" data-tab="cultural">Cultural Adaptation</button>
+                    <button class="api-tab" data-tab="quality">Quality Assessment</button>
+                </div>
+                <div class="api-content">
+                    <div class="api-tab-content active" id="translate-tab">
+                        <div class="api-demo">
+                            <div class="request-section">
+                                <h4>API Request</h4>
+                                <div class="code-block">
+                                    <pre><code>POST /api/v1/translate
+Content-Type: application/json
+Authorization: Bearer YOUR_API_KEY
+
+{
+  "content": "Advanced welding techniques for automotive repair",
+  "sourceLanguage": "en",
+  "targetLanguages": ["hi", "bn", "te"],
+  "culturalContext": "automotive_repair",
+  "qualityLevel": "professional"
+}</code></pre>
+                                </div>
+                                <button class="btn-primary" id="test-translate-api">Test API</button>
+                            </div>
+                            <div class="response-section">
+                                <h4>API Response</h4>
+                                <div class="response-output" id="translate-response">
+                                    Click "Test API" to see the response
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="api-tab-content" id="cultural-tab">
+                        <div class="api-demo">
+                            <div class="request-section">
+                                <h4>Cultural Adaptation API</h4>
+                                <div class="code-block">
+                                    <pre><code>POST /api/v1/cultural-adaptation
+{
+  "content": "Safety procedures for electrical work",
+  "targetRegion": "north_india",
+  "industry": "electrical_engineering",
+  "culturalPreferences": {
+    "formality": "professional",
+    "examples": "local"
+  }
+}</code></pre>
+                                </div>
+                                <button class="btn-primary" id="test-cultural-api">Test API</button>
+                            </div>
+                            <div class="response-section">
+                                <h4>Cultural Adaptation Response</h4>
+                                <div class="response-output" id="cultural-response">
+                                    Click "Test API" to see the response
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="api-tab-content" id="quality-tab">
+                        <div class="api-demo">
+                            <div class="request-section">
+                                <h4>Quality Assessment API</h4>
+                                <div class="code-block">
+                                    <pre><code>POST /api/v1/quality-assessment
+{
+  "originalContent": "Original text",
+  "translatedContent": "Translated text",
+  "language": "hi",
+  "domain": "technical"
+}</code></pre>
+                                </div>
+                                <button class="btn-primary" id="test-quality-api">Test API</button>
+                            </div>
+                            <div class="response-section">
+                                <h4>Quality Assessment Response</h4>
+                                <div class="response-output" id="quality-response">
+                                    Click "Test API" to see the response
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot Assistant -->
+    <section id="chatbot-assistant" class="chatbot-section page">
+        <div class="container">
+            <div class="section-header">
+                <h2>AI Assistant</h2>
+                <p>Get instant help and guidance for your localization needs</p>
+            </div>
+            <div class="chatbot-interface">
+                <div class="chatbot-window">
+                    <div class="chatbot-header">
+                        <div class="bot-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="bot-info">
+                            <span class="bot-name">NCVET Assistant</span>
+                            <span class="bot-status">Online</span>
+                        </div>
+                    </div>
+                    <div class="chatbot-messages" id="chatbot-messages">
+                        <div class="message bot-message">
+                            <div class="message-content">
+                                Hello! I'm your NCVET localization assistant. How can I help you today?
+                            </div>
+                            <div class="message-time">Just now</div>
+                        </div>
+                    </div>
+                    <div class="chatbot-input">
+                        <input type="text" id="chat-input" placeholder="Ask me anything about localization...">
+                        <button class="send-btn" id="send-message">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="quick-questions">
+                        <button class="quick-question" data-question="How do I upload content?">How do I upload content?</button>
+                        <button class="quick-question" data-question="What languages are supported?">What languages are supported?</button>
+                        <button class="quick-question" data-question="How accurate is the translation?">How accurate is the translation?</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section id="workflow" class="workflow page">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple 3-Step Localization Process</h2>
+                <p>Transform your training content in minutes, not months</p>
+            </div>
+            <div class="workflow-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Upload Content</h3>
+                        <p>Upload your training materials in any format - documents, videos, audio, or assessments</p>
+                        <div class="step-visual">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Select Languages</h3>
+                        <p>Choose target languages and specify cultural preferences for optimal adaptation</p>
+                        <div class="step-visual">
+                            <i class="fas fa-language"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Get Localized Content</h3>
+                        <p>Receive culturally adapted, professionally translated content ready for deployment</p>
+                        <div class="step-visual">
+                            <i class="fas fa-download"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accessibility Section -->
+    <section id="accessibility" class="accessibility page">
+        <div class="container">
+            <div class="accessibility-content">
+                <div class="accessibility-text">
+                    <h2>Inclusive Learning for Everyone</h2>
+                    <p>Our platform ensures that differently-abled learners have equal access to skill education through advanced accessibility features.</p>
+                    <div class="accessibility-features">
+                        <div class="accessibility-feature">
+                            <i class="fas fa-eye"></i>
+                            <div>
+                                <h4>Screen Reader Support</h4>
+                                <p>Full compatibility with screen readers and assistive technologies</p>
+                            </div>
+                        </div>
+                        <div class="accessibility-feature">
+                            <i class="fas fa-volume-up"></i>
+                            <div>
+                                <h4>Audio Learning</h4>
+                                <p>High-quality text-to-speech in multiple languages and voices</p>
+                            </div>
+                        </div>
+                        <div class="accessibility-feature">
+                            <i class="fas fa-keyboard"></i>
+                            <div>
+                                <h4>Keyboard Navigation</h4>
+                                <p>Complete keyboard accessibility for all platform functions</p>
+                            </div>
+                        </div>
+                        <div class="accessibility-feature">
+                            <i class="fas fa-adjust"></i>
+                            <div>
+                                <h4>Visual Accessibility</h4>
+                                <p>Customizable contrast, font sizes, and color schemes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accessibility-visual">
+                    <div class="accessibility-demo">
+                        <div class="demo-screen">
+                            <div class="screen-header">
+                                <span>Accessibility Demo</span>
+                                <div class="accessibility-controls">
+                                    <button class="control-btn"><i class="fas fa-volume-up"></i></button>
+                                    <button class="control-btn"><i class="fas fa-adjust"></i></button>
+                                    <button class="control-btn"><i class="fas fa-text-height"></i></button>
+                                </div>
+                            </div>
+                            <div class="screen-content">
+                                <p>Sample training content with accessibility features enabled...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section id="integration" class="integration page">
+        <div class="container">
+            <div class="section-header">
+                <h2>Seamless Integration with Existing Platforms</h2>
+                <p>Connect with NCVET, MSDE platforms, and partner LMSs through our robust APIs</p>
+            </div>
+            <div class="integration-grid">
+                <div class="integration-card">
+                    <div class="integration-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>NCVET Platforms</h3>
+                    <p>Direct integration with NCVET systems and databases</p>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>MSDE Systems</h3>
+                    <p>Seamless connection with MSDE infrastructure</p>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Learning Management Systems</h3>
+                    <p>Compatible with popular LMS platforms</p>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Skill India Digital</h3>
+                    <p>Native integration with Skill India Digital platform</p>
+                </div>
+            </div>
+            <div class="api-showcase">
+                <h3>Developer-Friendly APIs</h3>
+                <div class="code-example">
+                    <pre><code>// Example API Usage
+const response = await fetch('/api/v1/localize', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer YOUR_API_KEY'
+  },
+  body: JSON.stringify({
+    content: 'Training material text...',
+    sourceLanguage: 'en',
+    targetLanguages: ['hi', 'bn', 'te'],
+    culturalContext: 'automotive_repair'
+  })
+});
+
+const localizedContent = await response.json();</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta page" id="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Training Content?</h2>
+                <p>Join thousands of training providers making skill education accessible to all</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary btn-large">
+                        <i class="fas fa-rocket"></i>
+                        Start Your Free Trial
+                    </button>
+                    <button class="btn-secondary btn-large">
+                        <i class="fas fa-calendar"></i>
+                        Schedule Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-language"></i>
+                        <span>NCVET Localization</span>
+                    </div>
+                    <p>Democratizing skill education through AI-powered multilingual content localization.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#languages">Languages</a></li>
+                        <li><a href="#workflow">Workflow</a></li>
+                        <li><a href="#integration">Integration</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">About NCVET</a></li>
+                        <li><a href="#">Partnership</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NCVET Multilingual Content Localization Engine. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
