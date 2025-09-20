@@ -799,6 +799,260 @@ function initializeProgressDashboard() {
     }, 5000);
 }
 
+// Video Language Recognition Demo
+function initializeVideoDemo() {
+    const videoUploadZone = document.getElementById('video-upload-zone');
+    const videoInput = document.getElementById('video-input');
+    const videoPreview = document.getElementById('video-preview');
+    const videoPlayer = document.getElementById('video-player');
+    const analyzeVideoBtn = document.getElementById('analyze-video');
+    const resetVideoBtn = document.getElementById('reset-video');
+    const analysisStatus = document.getElementById('analysis-status');
+    const languageList = document.getElementById('language-list');
+    const confidenceScore = document.getElementById('confidence-score');
+    const processingTime = document.getElementById('processing-time');
+    const videoAudioQuality = document.getElementById('video-audio-quality');
+    const transcriptionTimeline = document.getElementById('transcription-timeline');
+    const timelineContent = document.getElementById('timeline-content');
+    const playTimelineBtn = document.getElementById('play-timeline');
+    const pauseTimelineBtn = document.getElementById('pause-timeline');
+
+    let currentVideoFile = null;
+    let analysisResults = null;
+
+    // Video upload functionality
+    if (videoUploadZone && videoInput) {
+        // Drag and drop functionality
+        videoUploadZone.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            videoUploadZone.classList.add('dragover');
+        });
+        
+        videoUploadZone.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            videoUploadZone.classList.remove('dragover');
+        });
+        
+        videoUploadZone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            videoUploadZone.classList.remove('dragover');
+            handleVideoFiles(e.dataTransfer.files);
+        });
+        
+        videoUploadZone.addEventListener('click', function() {
+            videoInput.click();
+        });
+        
+        videoInput.addEventListener('change', function() {
+            handleVideoFiles(this.files);
+        });
+    }
+
+    function handleVideoFiles(files) {
+        if (files.length > 0) {
+            const file = files[0];
+            if (file.type.startsWith('video/')) {
+                currentVideoFile = file;
+                displayVideoPreview(file);
+            } else {
+                alert('Please select a valid video file.');
+            }
+        }
+    }
+
+    function displayVideoPreview(file) {
+        const videoURL = URL.createObjectURL(file);
+        videoPlayer.src = videoURL;
+        videoUploadZone.style.display = 'none';
+        videoPreview.style.display = 'block';
+        analysisStatus.textContent = 'Video uploaded successfully. Click "Analyze Language" to begin.';
+        analysisStatus.className = 'analysis-status';
+    }
+
+    // Analyze video button
+    if (analyzeVideoBtn) {
+        analyzeVideoBtn.addEventListener('click', function() {
+            if (currentVideoFile) {
+                analyzeVideo();
+            } else {
+                alert('Please upload a video first.');
+            }
+        });
+    }
+
+    // Reset video button
+    if (resetVideoBtn) {
+        resetVideoBtn.addEventListener('click', function() {
+            resetVideo();
+        });
+    }
+
+    function analyzeVideo() {
+        // Update UI to show analyzing state
+        analysisStatus.textContent = 'Analyzing video...';
+        analysisStatus.className = 'analysis-status analyzing';
+        analyzeVideoBtn.classList.add('loading');
+        analyzeVideoBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Analyzing...';
+
+        // Simulate video analysis
+        setTimeout(() => {
+            // Mock analysis results
+            analysisResults = {
+                languages: [
+                    { name: 'हिंदी (Hindi)', confidence: 95, flag: 'IN' },
+                    { name: 'English', confidence: 78, flag: 'US' },
+                    { name: 'বাংলা (Bengali)', confidence: 45, flag: 'BD' }
+                ],
+                confidence: 89,
+                processingTime: '2.3s',
+                audioQuality: 'Good',
+                transcription: [
+                    { time: '0:00', text: 'नमस्ते, आज हम automotive repair के बारे में बात करेंगे', language: 'Hindi' },
+                    { time: '0:05', text: 'Today we will learn about safety protocols', language: 'English' },
+                    { time: '0:10', text: 'প্রথমে আমাদের নিরাপত্তা সরঞ্জাম পরিধান করতে হবে', language: 'Bengali' },
+                    { time: '0:15', text: 'Always wear protective equipment when working', language: 'English' }
+                ]
+            };
+
+            displayAnalysisResults();
+        }, 3000);
+    }
+
+    function displayAnalysisResults() {
+        // Update status
+        analysisStatus.textContent = 'Analysis completed successfully';
+        analysisStatus.className = 'analysis-status completed';
+
+        // Reset analyze button
+        analyzeVideoBtn.classList.remove('loading');
+        analyzeVideoBtn.innerHTML = '<i class="fas fa-search"></i> Analyze Language';
+
+        // Display detected languages
+        displayDetectedLanguages();
+
+        // Update metrics
+        confidenceScore.textContent = analysisResults.confidence + '%';
+        processingTime.textContent = analysisResults.processingTime;
+        videoAudioQuality.textContent = analysisResults.audioQuality;
+
+        // Display transcription timeline
+        displayTranscriptionTimeline();
+    }
+
+    function displayDetectedLanguages() {
+        languageList.innerHTML = '';
+        
+        analysisResults.languages.forEach(lang => {
+            const languageItem = document.createElement('div');
+            languageItem.className = 'language-item';
+            languageItem.innerHTML = `
+                <div class="language-info">
+                    <div class="language-flag">${lang.flag}</div>
+                    <span class="language-name">${lang.name}</span>
+                </div>
+                <div class="language-confidence">${lang.confidence}%</div>
+            `;
+            languageList.appendChild(languageItem);
+        });
+    }
+
+    function displayTranscriptionTimeline() {
+        transcriptionTimeline.style.display = 'block';
+        timelineContent.innerHTML = '';
+
+        analysisResults.transcription.forEach(item => {
+            const timelineItem = document.createElement('div');
+            timelineItem.className = 'timeline-item';
+            timelineItem.innerHTML = `
+                <div class="timeline-time">${item.time}</div>
+                <div class="timeline-text">${item.text}</div>
+                <div class="timeline-language">${item.language}</div>
+            `;
+            timelineContent.appendChild(timelineItem);
+        });
+    }
+
+    function resetVideo() {
+        // Reset all elements
+        currentVideoFile = null;
+        analysisResults = null;
+        
+        // Reset video player
+        videoPlayer.src = '';
+        
+        // Hide preview, show upload zone
+        videoPreview.style.display = 'none';
+        videoUploadZone.style.display = 'block';
+        
+        // Reset analysis results
+        analysisStatus.textContent = 'Upload a video to begin analysis';
+        analysisStatus.className = 'analysis-status';
+        
+        // Clear language list
+        languageList.innerHTML = '<div class="no-detection">No languages detected yet</div>';
+        
+        // Reset metrics
+        confidenceScore.textContent = '--';
+        processingTime.textContent = '--';
+        videoAudioQuality.textContent = '--';
+        
+        // Hide timeline
+        transcriptionTimeline.style.display = 'none';
+        
+        // Reset analyze button
+        analyzeVideoBtn.classList.remove('loading');
+        analyzeVideoBtn.innerHTML = '<i class="fas fa-search"></i> Analyze Language';
+    }
+
+    // Timeline controls
+    if (playTimelineBtn) {
+        playTimelineBtn.addEventListener('click', function() {
+            if (videoPlayer && !videoPlayer.paused) {
+                videoPlayer.play();
+            }
+            this.style.display = 'none';
+            pauseTimelineBtn.style.display = 'inline-flex';
+        });
+    }
+
+    if (pauseTimelineBtn) {
+        pauseTimelineBtn.addEventListener('click', function() {
+            if (videoPlayer && !videoPlayer.paused) {
+                videoPlayer.pause();
+            }
+            this.style.display = 'none';
+            playTimelineBtn.style.display = 'inline-flex';
+        });
+    }
+
+    // Sync video player with timeline
+    if (videoPlayer) {
+        videoPlayer.addEventListener('timeupdate', function() {
+            const currentTime = videoPlayer.currentTime;
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            // Highlight current timeline item based on video time
+            timelineItems.forEach(item => {
+                const timeText = item.querySelector('.timeline-time').textContent;
+                const timeInSeconds = parseTimeToSeconds(timeText);
+                
+                if (Math.abs(currentTime - timeInSeconds) < 2) {
+                    item.style.background = 'rgba(37, 99, 235, 0.1)';
+                    item.style.borderLeft = '4px solid var(--primary-color)';
+                } else {
+                    item.style.background = 'white';
+                    item.style.borderLeft = 'none';
+                }
+            });
+        });
+    }
+
+    function parseTimeToSeconds(timeString) {
+        const parts = timeString.split(':');
+        return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+    }
+}
+
 // Initialize all new features when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initializeTranslationDemo();
@@ -808,6 +1062,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeChatbot();
     initializeCulturalPreview();
     initializeProgressDashboard();
+    initializeVideoDemo();
 });
 
 // Export functions for potential module usage
@@ -821,7 +1076,8 @@ window.NCVETLocalization = {
     initializeAPIPlayground,
     initializeChatbot,
     initializeCulturalPreview,
-    initializeProgressDashboard
+    initializeProgressDashboard,
+    initializeVideoDemo
 };
 
 // Simple client-side page router
